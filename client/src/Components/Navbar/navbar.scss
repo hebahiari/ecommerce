@@ -1,6 +1,7 @@
 .navbar {
-  height: 80px;
-  background-color: rgb(255, 185, 185);
+  // height: 80px;
+  background-color: rgb(255, 255, 255);
+  color: black;
 
   .wrapper {
     padding: 10px 30px;
@@ -27,6 +28,7 @@
     .center {
       font-size: 30px;
       letter-spacing: 2px;
+      font-family: "Electrolize", sans-serif;
     }
 
     .right {

@@ -45,8 +45,10 @@ export default function Footer() {
       </div>
       <div className="bottom">
         <div className="left">
-          <span className="logo">TechWearDom</span>
-          <span>© 2022 TechWearDom. All rights reserved.</span>
+          <span className="logo">TechWearCo</span>
+          <span className="copyrights">
+            © 2022 TechWearCo. All rights reserved.
+          </span>
         </div>
         <div className="right">
           <img src="/img/payments.png" alt="" />

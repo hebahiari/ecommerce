@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
         <div className="center">
           <Link className="link" to="/">
-            TechWearDom
+            TechWearCo
           </Link>
         </div>
         <div className="right">
