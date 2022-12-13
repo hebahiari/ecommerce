@@ -18,9 +18,9 @@ export default function Slider() {
   };
 
   const data = [
+    "https://cdn1.epicgames.com/ue/product/Screenshot/02-1920x1080-c133fabefb591029cab0e09d68a375f4.jpg?resize=1&w=1920",
     "https://cdn1.epicgames.com/ue/product/Screenshot/MarketplaceGallery01-1920x1080-5a89e7dcd427d31ee242c2f165733ae7.jpg?resize=1&w=1920",
     "https://www.elleman.vn/wp-content/uploads/2020/03/05/1_phong-cach-tech-wear_elleman_0320.jpg",
-    "https://cdn1.epicgames.com/ue/product/Screenshot/02-1920x1080-c133fabefb591029cab0e09d68a375f4.jpg?resize=1&w=1920",
   ];
 
   return (
