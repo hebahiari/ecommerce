@@ -39,8 +39,10 @@ export default function Cart() {
           <div className="details">
             <h1>{item.title}</h1>
             <p>{item.desc?.substring(0, 100)}</p>
-            <div className="price">1 x ${item.price}</div>
-            <DeleteOutline className="remove" />
+            <div className="bottom">
+              <div className="price">1 x ${item.price}</div>
+              <DeleteOutline className="remove" />
+            </div>
           </div>
         </div>
       ))}
@@ -48,8 +50,10 @@ export default function Cart() {
         <span>Subtotal:</span>
         <span>$255</span>
       </div>
-      <button>Proceed to checkout</button>
-      <span className="reset">Reset cart</span>
+      <div className="checkout">
+        <span className="reset">Reset cart</span>
+        <button>Proceed to checkout</button>
+      </div>
     </div>
   );
 }
