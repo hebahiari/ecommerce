@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../../utilis/useFetch";
 import List from "./List/List";
 import "./products.scss";
 
@@ -7,24 +8,40 @@ export default function Products() {
   const categoryId = useParams().id;
   const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const { data, loading, error } = useFetch(
+    `/subcategories?[filters][categories][id][$eq]=${categoryId}`
+  );
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    const isChecked = event.target.checked;
+
+    setSelectedCategories(
+      isChecked
+        ? [...selectedCategories, value]
+        : selectedCategories.filter((item) => item !== value)
+    );
+  };
 
   return (
     <div className="products">
       <div className="left">
         <div className="filterItem">
           <h2>Categories</h2>
-          <div className="inputItem">
-            <input type="checkbox" className="" id="1" value={1} />
-            <label htmlFor="1">Outerwear</label>
-          </div>
-          <div className="inputItem">
-            <input type="checkbox" className="" id="2" value={2} />
-            <label htmlFor="2">Tops</label>
-          </div>
-          <div className="inputItem">
-            <input type="checkbox" className="" id="3" value={3} />
-            <label htmlFor="3">Shoes</label>
-          </div>
+          {data?.map((item) => (
+            <div className="inputItem" key={item.id}>
+              <input
+                type="checkbox"
+                className=""
+                id={item.id}
+                value={item.id}
+                onChange={handleChange}
+              />
+              <label htmlFor={item.id}>{item.attributes.title}</label>
+            </div>
+          ))}
         </div>
         <div className="filterItem">
           <h2>Filter By Price</h2>
@@ -74,7 +91,12 @@ export default function Products() {
           className="categoriesImage"
           alt=""
         />
-        <List categoryId={categoryId} maxPrice={maxPrice} sort={sort} />
+        <List
+          categoryId={categoryId}
+          maxPrice={maxPrice}
+          sort={sort}
+          selectedCategories={selectedCategories}
+        />
       </div>
     </div>
   );

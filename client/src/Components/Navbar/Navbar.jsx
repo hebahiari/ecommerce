@@ -27,17 +27,17 @@ export default function Navbar() {
           </div>
           <div className="item">
             <Link className="link" to="/products/1">
-              Women
+              Clothing
             </Link>
           </div>
           <div className="item">
             <Link className="link" to="/products/2">
-              Men
+              Shoes
             </Link>
           </div>
           <div className="item">
             <Link className="link" to="/products/3">
-              Children
+              Accessories
             </Link>
           </div>
         </div>

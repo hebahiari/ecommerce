@@ -1,4 +1,4 @@
-import Categories from "./Categories/Categories";
+import CategoriesSection from "./CategoriesSection/CategoriesSection";
 import Contact from "./Contact/Contact";
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import "./home.scss";
@@ -9,7 +9,7 @@ export default function Home() {
     <div className="home">
       <Slider />
       <FeaturedProducts type={"featured"} />
-      <Categories />
+      <CategoriesSection />
       <Contact />
     </div>
   );

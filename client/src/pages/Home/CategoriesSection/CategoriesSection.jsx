@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./categories.scss";
+import "./categoriesSection.scss";
 
 export default function Categories() {
   return (
