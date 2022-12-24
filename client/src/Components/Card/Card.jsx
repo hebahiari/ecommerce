@@ -11,7 +11,7 @@ export default function Card({ item }) {
           <img
             src={
               process.env.REACT_APP_BASE_URL +
-              item?.attributes.images.data[0].attributes.url
+              item?.attributes?.images?.data[0]?.attributes?.url
             }
             alt=""
             className="mainImage"
@@ -19,7 +19,7 @@ export default function Card({ item }) {
           <img
             src={
               process.env.REACT_APP_BASE_URL +
-              item?.attributes.images.data[1].attributes.url
+              item?.attributes?.images?.data[1]?.attributes?.url
             }
             alt=""
             className="secondImage"

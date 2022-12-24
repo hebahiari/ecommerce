@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import Card from "../../../Components/Card/Card";
 import "./featuredProducts.scss";
-import axios from "axios";
+import useFetch from "../../../utilis/useFetch";
 
 export default function FeaturedProducts({ type }) {
   // const data = [
@@ -51,28 +50,28 @@ export default function FeaturedProducts({ type }) {
   //   },
   // ];
 
-  const [products, setProducts] = useState([]);
+  const { data, loading, error } = useFetch("/products?populate=*");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log("hello ", process.env);
-        const response = await axios.get(
-          process.env.REACT_APP_API_URL + "/products?populate=*",
-          {
-            headers: {
-              Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
-            },
-          }
-        );
-        setProducts(response.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       console.log("hello ", process.env);
+  //       const response = await axios.get(
+  //         process.env.REACT_APP_API_URL + "/products?populate=*",
+  //         {
+  //           headers: {
+  //             Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
+  //           },
+  //         }
+  //       );
+  //       setProducts(response.data.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="featuredProducts">
@@ -87,9 +86,11 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className="bottom">
-        {products.map((item) => (
-          <Card item={item} key={item.id} />
-        ))}
+        {error
+          ? "there's an error"
+          : loading
+          ? "loading"
+          : data.map((item) => <Card item={item} key={item.id} />)}
       </div>
     </div>
   );
