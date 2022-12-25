@@ -1,6 +1,7 @@
 import Card from "../../../Components/Card/Card";
 import "./featuredProducts.scss";
 import useFetch from "../../../utilis/useFetch";
+import Loading from "../../../Components/Loading/Loading";
 
 export default function FeaturedProducts({ type }) {
   const { data, loading, error } = useFetch("/products?populate=*");
@@ -18,11 +19,13 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className="bottom">
-        {error
-          ? "there's an error"
-          : loading
-          ? "loading"
-          : data.map((item) => <Card item={item} key={item.id} />)}
+        {error ? (
+          "there's an error"
+        ) : loading ? (
+          <Loading />
+        ) : (
+          data.map((item) => <Card item={item} key={item.id} />)
+        )}
       </div>
     </div>
   );

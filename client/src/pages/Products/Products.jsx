@@ -68,7 +68,6 @@ export default function Products() {
               name="price"
               onChange={() => {
                 setSort("asc");
-                console.log("changed");
               }}
             />
             <label htmlFor="asc">Price (Lowest first) </label>
