@@ -2,12 +2,11 @@ import "./card.scss";
 import { Link } from "react-router-dom";
 
 export default function Card({ item }) {
-  console.log({ item });
   return (
     <Link className="link" to={`/product/${item?.id}`}>
       <div className="card">
         <div className="image">
-          {item.isNew && <span>New</span>}
+          {item?.attributes?.isNew && <span>New</span>}
           <img
             src={
               process.env.REACT_APP_BASE_URL +

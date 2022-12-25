@@ -26,12 +26,12 @@ export default function Navbar() {
             <KeyboardArrowDown />
           </div>
           <div className="item">
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/products/4">
               Clothing
             </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/products/2">
+            <Link className="link" to="/products/1">
               Shoes
             </Link>
           </div>

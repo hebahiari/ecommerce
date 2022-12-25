@@ -9,7 +9,9 @@ export default function List({
   selectedCategories,
 }) {
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filters][categories][id]=${categoryId}`
+    `/products?populate=*&[filters][categories][id]=${categoryId}${selectedCategories
+      .map((id) => `&[filters][subcategories][id]=${id}`)
+      .join("")}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
   );
 
   return (
