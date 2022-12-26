@@ -22,7 +22,7 @@ export default function Categories() {
             alt=""
           />
           <button>
-            <Link to="./products/1" className="link">
+            <Link to="./products/shoes" className="link">
               Shoes
             </Link>
           </button>
@@ -35,7 +35,7 @@ export default function Categories() {
             alt=""
           />
           <button>
-            <Link to="./products/1" className="link">
+            <Link to="./products/clothing?subcategory=11" className="link">
               Outerwear
             </Link>
           </button>
@@ -50,7 +50,7 @@ export default function Categories() {
                 alt=""
               />
               <button>
-                <Link to="./products/1" className="link">
+                <Link to="./products/clothing?subcategory=10" className="link">
                   Pants
                 </Link>
               </button>
@@ -63,7 +63,7 @@ export default function Categories() {
                 alt=""
               />
               <button>
-                <Link to="./products/1" className="link">
+                <Link to="./products/accessories" className="link">
                   Accessories
                 </Link>
               </button>
@@ -76,7 +76,7 @@ export default function Categories() {
             alt=""
           />
           <button>
-            <Link to="./products/1" className="link">
+            <Link to="./products/clothing?subcategory=12" className="link">
               Sets
             </Link>
           </button>

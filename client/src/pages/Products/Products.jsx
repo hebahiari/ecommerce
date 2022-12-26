@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import useFetch from "../../utilis/useFetch";
 import List from "./List/List";
 import "./products.scss";
 
 export default function Products() {
   const category = useParams().category;
+  const subcategoryId = new URLSearchParams(useLocation().search).get(
+    "subcategory"
+  );
   const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([
+    subcategoryId ? subcategoryId : [],
+  ]);
 
   const { data, loading, error } = useFetch(
     `/subcategories?[filters][categories][title][$eq]=${category}`
