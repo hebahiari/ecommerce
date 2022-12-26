@@ -4,6 +4,14 @@ import { useSelector } from "react-redux";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart.products);
+  const totalPrice = () => {
+    let total = 0;
+    products.forEach((item) => {
+      total += item.quantity * item.price;
+    });
+
+    return total.toFixed(2);
+  };
 
   return (
     <div className="cart">
@@ -17,7 +25,9 @@ export default function Cart() {
                 <h1>{item.title}</h1>
                 <p>{item.desc?.substring(0, 100)}</p>
                 <div className="bottom">
-                  <div className="price">1 x ${item.price}</div>
+                  <div className="price">
+                    {item.quantity} x ${item.price}
+                  </div>
                   <DeleteOutline className="remove" />
                 </div>
               </div>
@@ -25,7 +35,7 @@ export default function Cart() {
           ))}
           <div className="total">
             <span>Subtotal:</span>
-            <span>$255</span>
+            <span>${totalPrice()}</span>
           </div>
           <div className="checkout">
             <span className="reset">Reset cart</span>

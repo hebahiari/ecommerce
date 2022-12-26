@@ -65,7 +65,7 @@ export default function Product() {
               onClick={() =>
                 dispatch(
                   addToCart({
-                    id: data.attributes.id,
+                    id: data.id,
                     title: data.attributes.title,
                     desc: data.attributes.desc,
                     price: data.attributes.price,
