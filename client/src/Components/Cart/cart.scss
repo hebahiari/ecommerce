@@ -5,7 +5,14 @@
   z-index: 5;
   background-color: white;
   padding: 20px;
-  max-width: 400px;
+  width: 400px;
+  min-height: 100px;
+
+  .empty {
+    display: flex;
+    align-items: center;
+    color: gray;
+  }
 
   h1 {
     margin-bottom: 30px;

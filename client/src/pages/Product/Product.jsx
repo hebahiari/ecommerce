@@ -3,6 +3,8 @@ import { AddShoppingCart, FavoriteBorder, Balance } from "@mui/icons-material";
 import "./product.scss";
 import useFetch from "../../utilis/useFetch";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartReducer";
 import Loading from "../../Components/Loading/Loading";
 
 export default function Product() {
@@ -10,9 +12,8 @@ export default function Product() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
+  const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
-
-  console.log({ data });
 
   return (
     <div className="product">
@@ -44,7 +45,7 @@ export default function Product() {
           </div>
           <div className="right">
             <h1>{data?.attributes?.title}</h1>
-            <span className="price">{data?.attributes?.price}</span>
+            <span className="price">${data?.attributes?.price}</span>
             <p>{data?.attributes?.desc}</p>
             <div className="quantity">
               <button
@@ -59,7 +60,21 @@ export default function Product() {
                 +
               </button>
             </div>
-            <button className="add">
+            <button
+              className="add"
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: data.attributes.id,
+                    title: data.attributes.title,
+                    desc: data.attributes.desc,
+                    price: data.attributes.price,
+                    image: data.attributes.images.data[0].attributes.url,
+                    quantity,
+                  })
+                )
+              }
+            >
               <AddShoppingCart />
               Add to cart
             </button>
