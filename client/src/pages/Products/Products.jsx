@@ -5,13 +5,13 @@ import List from "./List/List";
 import "./products.scss";
 
 export default function Products() {
-  const categoryId = useParams().id;
+  const category = useParams().category;
   const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const { data, loading, error } = useFetch(
-    `/subcategories?[filters][categories][id][$eq]=${categoryId}`
+    `/subcategories?[filters][categories][title][$eq]=${category}`
   );
 
   const handleChange = (event) => {
@@ -91,7 +91,7 @@ export default function Products() {
           alt=""
         />
         <List
-          categoryId={categoryId}
+          category={category}
           maxPrice={maxPrice}
           sort={sort}
           selectedCategories={selectedCategories}

@@ -26,7 +26,7 @@ export default function Product() {
                 <img
                   src={process.env.REACT_APP_BASE_URL + image?.attributes?.url}
                   alt=""
-                  onClick={() => setSelectedImage(index)}
+                  onMouseOver={() => setSelectedImage(index)}
                 />
               ))}
             </div>
@@ -43,15 +43,9 @@ export default function Product() {
             </div>
           </div>
           <div className="right">
-            <h1>Belted Dress</h1>
-            <span className="price">$99</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              tempus, turpis et dictum bibendum, magna magna accumsan eros,
-              hendrerit auctor lectus lectus id nulla. Fusce vitae nisi mi.
-              Vestibulum et consequat sem. Nullam varius tempor sapien vel
-              vestibulum.
-            </p>
+            <h1>{data?.attributes?.title}</h1>
+            <span className="price">{data?.attributes?.price}</span>
+            <p>{data?.attributes?.desc}</p>
             <div className="quantity">
               <button
                 onClick={() =>
