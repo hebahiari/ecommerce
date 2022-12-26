@@ -9,9 +9,16 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+
+  const numberOfItems = products.reduce(
+    (currentTotal, currentValue) => currentTotal + currentValue.quantity,
+    0
+  );
 
   return (
     <div className="navbar">
@@ -76,7 +83,7 @@ export default function Navbar() {
               onClick={() => setOpenCart((current) => !current)}
             >
               <ShoppingCartOutlined />
-              <span>0</span>
+              <span>{numberOfItems}</span>
             </div>
           </div>
         </div>

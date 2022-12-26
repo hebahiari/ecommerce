@@ -1,8 +1,10 @@
 import "./cart.scss";
 import { DeleteOutline } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItem, resetCart } from "../../redux/cartReducer";
 
 export default function Cart() {
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.cart.products);
   const totalPrice = () => {
     let total = 0;
@@ -28,7 +30,10 @@ export default function Cart() {
                   <div className="price">
                     {item.quantity} x ${item.price}
                   </div>
-                  <DeleteOutline className="remove" />
+                  <DeleteOutline
+                    className="remove"
+                    onClick={() => dispatch(removeItem(item.id))}
+                  />
                 </div>
               </div>
             </div>
@@ -38,7 +43,9 @@ export default function Cart() {
             <span>${totalPrice()}</span>
           </div>
           <div className="checkout">
-            <span className="reset">Reset cart</span>
+            <span className="reset" onClick={() => dispatch(resetCart())}>
+              Reset cart
+            </span>
             <button>Proceed to checkout</button>
           </div>
         </>
