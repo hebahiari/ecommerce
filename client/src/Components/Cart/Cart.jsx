@@ -2,6 +2,8 @@ import "./cart.scss";
 import { DeleteOutline } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, resetCart } from "../../redux/cartReducer";
+import { api } from "../../utilis/api";
+import { loadStripe } from "@stripe/stripe-js";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -13,6 +15,26 @@ export default function Cart() {
     });
 
     return total.toFixed(2);
+  };
+
+  const stripePromise = loadStripe(
+    "pk_test_51MJMkoD8oCa7ghZzrwVliOVeFEkYYHLYt8Z1727WeGOHnQmnb87OhlO66GSuaxhHWbRzKcDwxyKYae6oAjhhIcfv00woRfUitK"
+  );
+
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+      const response = await api.post("/orders", {
+        products,
+      });
+
+      console.log({ response });
+      await stripe.redirectToCheckout({
+        sessionId: response.data.stripeSession.id,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -46,7 +68,7 @@ export default function Cart() {
             <span className="reset" onClick={() => dispatch(resetCart())}>
               Reset cart
             </span>
-            <button>Proceed to checkout</button>
+            <button onClick={handlePayment}>Proceed to checkout</button>
           </div>
         </>
       ) : (

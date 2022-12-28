@@ -11,9 +11,9 @@ export default function Products() {
   );
   const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
-  const [selectedCategories, setSelectedCategories] = useState([
-    subcategoryId ? subcategoryId : [],
-  ]);
+  const [selectedCategories, setSelectedCategories] = useState(
+    subcategoryId ? [subcategoryId] : []
+  );
 
   const { data, loading, error } = useFetch(
     `/subcategories?[filters][categories][title][$eq]=${category}`
