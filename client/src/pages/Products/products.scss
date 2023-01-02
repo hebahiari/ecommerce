@@ -7,9 +7,9 @@
 .products {
   padding: 30px 50px;
   display: flex;
-  flex-direction: column;
   max-width: 1200px;
   margin: auto;
+  margin-bottom: 200px;
 
   .left {
     flex: 1;
@@ -18,7 +18,7 @@
     top: 50px;
 
     .filterItem {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
 
       h2 {
         font-weight: bold;
@@ -37,5 +37,8 @@
 
   .right {
     flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

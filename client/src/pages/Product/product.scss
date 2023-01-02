@@ -2,6 +2,9 @@
   padding: 20px 50px;
   display: flex;
   gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 200px;
 
   .left {
     display: flex;
@@ -25,7 +28,7 @@
 
       img {
         width: 100%;
-        max-height: 800px;
+        height: 600px;
         object-fit: cover;
       }
     }
@@ -51,7 +54,8 @@
     .quantity {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 20px;
+      font-weight: bold;
 
       button {
         width: 30px;
@@ -61,6 +65,9 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
       }
     }
 
@@ -78,7 +85,7 @@
       font-weight: bold;
     }
 
-    .links {
+    .link {
       display: flex;
       gap: 20px;
 
@@ -88,6 +95,8 @@
         gap: 10px;
         color: gray;
         font-size: 14px;
+        display: flex;
+        align-items: center;
       }
     }
 

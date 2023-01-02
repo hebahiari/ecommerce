@@ -16,8 +16,10 @@ export default function List({ category, maxPrice, sort, selectedCategories }) {
     <div className="list">
       {loading ? (
         <Loading />
-      ) : (
+      ) : data.length ? (
         data?.map((item) => <Card item={item} key={item.id} />)
+      ) : (
+        <span className="notFound">No items found</span>
       )}
     </div>
   );

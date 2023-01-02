@@ -92,14 +92,7 @@ export default function Product() {
               <span>Tags: dress, women</span>
             </div>
             <hr />
-            <div className="info">
-              <span>Description</span>
-              <hr />
-              <span>Additional Info</span>
-              <hr />
-              <span>FAQ</span>
-            </div>
-          </div>{" "}
+          </div>
         </>
       )}
     </div>
