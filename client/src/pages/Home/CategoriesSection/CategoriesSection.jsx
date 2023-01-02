@@ -6,10 +6,7 @@ export default function Categories() {
     <div className="categories">
       <div className="col">
         <div className="row">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0526/6623/7082/products/Techwear-Tank-Top_1_300x.jpg?v=1668493033"
-            alt=""
-          />
+          <img src="/img/home-tops.jpg" alt="" />
           <button>
             <Link to="./products/1" className="link">
               Tops
@@ -17,10 +14,7 @@ export default function Categories() {
           </button>
         </div>
         <div className="row">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0526/6623/7082/products/TECHWEAR_VULCANIZED_SHOES-goth_600x.jpg?v=1668858039"
-            alt=""
-          />
+          <img src="/img/home-shoes.jpg" alt="" />
           <button>
             <Link to="./products/shoes" className="link">
               Shoes
@@ -30,10 +24,7 @@ export default function Categories() {
       </div>
       <div className="col">
         <div className="row">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0567/5873/0916/products/techwear-trench-coat-_1_400x.png?v=1643220023"
-            alt=""
-          />
+          <img src="/img/home-outerwear.jpg" alt="" />
           <button>
             <Link to="./products/clothing?subcategory=11" className="link">
               Outerwear
@@ -45,10 +36,7 @@ export default function Categories() {
         <div className="row">
           <div className="col">
             <div className="row">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0271/9658/8125/products/womens-black-tactical-pants-446_400x.jpg?v=1637167541"
-                alt=""
-              />
+              <img src="/img/home-pants.jpg" alt="" />
               <button>
                 <Link to="./products/clothing?subcategory=10" className="link">
                   Pants
@@ -58,10 +46,7 @@ export default function Categories() {
           </div>
           <div className="col">
             <div className="row">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0039/1780/7734/products/futuristic-techwear-shoulder-accessory-streetwear-fashion-raikago-13795477618806_2000x.jpg?v=1579809801"
-                alt=""
-              />
+              <img src="/img/home-accessories.jpg" alt="" />
               <button>
                 <Link to="./products/accessories" className="link">
                   Accessories
@@ -71,10 +56,7 @@ export default function Categories() {
           </div>
         </div>
         <div className="row">
-          <img
-            src="https://i.pinimg.com/originals/df/03/d4/df03d4eb177f1023ca4f85f83bcc0a41.jpg"
-            alt=""
-          />
+          <img src="/img/home-sets.jpg" alt="" />
           <button>
             <Link to="./products/clothing?subcategory=12" className="link">
               Sets

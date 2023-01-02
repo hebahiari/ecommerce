@@ -91,7 +91,7 @@ export default function Products() {
       </div>
       <div className="right">
         <img
-          src="https://cdn.shopify.com/s/files/1/0271/9658/8125/files/techwear-jacket_2af98b02-dc09-40e8-a29b-22300589c443.jpg?v=1617202769"
+          src="/img/products-banner.jpg"
           className="categoriesImage"
           alt=""
         />
