@@ -15,23 +15,37 @@ export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
   const products = useSelector((state) => state.cart.products);
 
+  //change navbar color when scrolled
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 50) {
+      setColor(true);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
+
   const numberOfItems = products.reduce(
     (currentTotal, currentValue) => currentTotal + currentValue.quantity,
     0
   );
 
   return (
-    <div className="navbar">
+    <div
+      className="navbar"
+      style={{
+        backgroundColor: `${color ? "white" : "transparent"}`,
+        color: `${color ? "black" : "white"}`,
+      }}
+    >
       <div className="wrapper">
+        {" "}
+        <div className="center">
+          <Link className="link" to="/">
+            TechWearCo
+          </Link>
+        </div>
         <div className="left">
-          <div className="item">
-            <img src="/img/eng.png" alt="" className="lang" />
-            <KeyboardArrowDown />
-          </div>
-          <div className="item">
-            USD
-            <KeyboardArrowDown />
-          </div>
           <div className="item">
             <Link className="link" to="/products/clothing">
               Clothing
@@ -48,36 +62,12 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="center">
-          <Link className="link" to="/">
-            TechWearCo
-          </Link>
-        </div>
         <div className="right">
-          <div className="item">
-            <Link className="link" to="/">
-              Home
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/1">
-              About
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/1">
-              Contact
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/1">
-              Stores
-            </Link>
-          </div>
           <div className="icons">
-            <Search />
-            <PersonOutlineOutlined />
-            <FavoriteBorderOutlined />
+            <div className="item">
+              <img src="/img/eng.png" alt="" className="lang" />
+              <KeyboardArrowDown />
+            </div>
             <div
               className="cartIcon"
               onClick={() => setOpenCart((current) => !current)}
