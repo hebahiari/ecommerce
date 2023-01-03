@@ -1,6 +1,8 @@
 .featuredProducts {
   max-width: 1200px;
   margin: auto;
+  overflow: hidden;
+  margin-bottom: 50px;
 
   .top {
     display: flex;
@@ -22,6 +24,29 @@
   .bottom {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    align-items: center;
+    position: relative;
+    transition: all 1s ease;
+    gap: 30px;
+
+    .content {
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+      max-width: 1000px;
+      transition: all 1s ease;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: rgba(153, 153, 153, 0.295);
+      z-index: 1;
+    }
   }
 }

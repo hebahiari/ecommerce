@@ -2,9 +2,24 @@ import Card from "../../../Components/Card/Card";
 import "./featuredProducts.scss";
 import useFetch from "../../../utilis/useFetch";
 import Loading from "../../../Components/Loading/Loading";
+import { useState } from "react";
+import { EastOutlined, WestOutlined } from "@mui/icons-material";
 
 export default function FeaturedProducts({ type }) {
   const { data, loading, error } = useFetch("/products?populate=*");
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const previousSlide = () => {
+    setCurrentSlide(currentSlide - 1);
+  };
+
+  const nextSlide = () => {
+    console.log(data.length);
+    setCurrentSlide(
+      currentSlide <= data.length - 5 ? currentSlide + 1 : currentSlide
+    );
+    console.log({ currentSlide });
+  };
 
   return (
     <div className="featuredProducts">
@@ -19,13 +34,24 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className="bottom">
-        {error ? (
-          "there's an error"
-        ) : loading ? (
-          <Loading />
-        ) : (
-          data.map((item) => <Card item={item} key={item.id} />)
-        )}
+        <div className="icon" onClick={previousSlide}>
+          <WestOutlined />
+        </div>
+        <div
+          className="content"
+          style={{ transform: `translateX(-${currentSlide * 450}px)` }}
+        >
+          {error ? (
+            "there's an error"
+          ) : loading ? (
+            <Loading />
+          ) : (
+            data.map((item) => <Card item={item} key={item.id} />)
+          )}
+        </div>
+        <div className="icon" onClick={nextSlide}>
+          <EastOutlined />
+        </div>
       </div>
     </div>
   );
