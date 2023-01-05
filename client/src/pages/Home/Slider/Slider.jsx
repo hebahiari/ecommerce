@@ -18,7 +18,7 @@ export default function Slider() {
   };
 
   useEffect(() => {
-    setInterval(() => previousSlide(), 4000); // this will make it click again every 1000 miliseconds
+    setInterval(() => nextSlide(), 4000); // this will make it click again every 1000 miliseconds
   }, []);
 
   return (
