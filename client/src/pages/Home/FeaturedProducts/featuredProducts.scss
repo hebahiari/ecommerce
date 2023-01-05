@@ -7,6 +7,7 @@
 
   .top {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
@@ -18,8 +19,7 @@
     }
 
     p {
-      flex: 3;
-      color: gray;
+      display: none;
     }
   }
 
@@ -49,6 +49,20 @@
       cursor: pointer;
       background-color: rgba(153, 153, 153, 0.295);
       z-index: 1;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .featuredProducts {
+    .top {
+      flex-direction: row;
+
+      p {
+        display: block;
+        flex: 3;
+        color: gray;
+      }
     }
   }
 }
