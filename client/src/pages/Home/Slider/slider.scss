@@ -1,5 +1,5 @@
 .slider {
-  height: calc(100vh - 80px);
+  height: 50vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    bottom: 100px;
+    bottom: 25px;
     gap: 20px;
 
     color: rgb(255, 255, 255);
@@ -38,6 +38,20 @@
       justify-content: center;
       cursor: pointer;
       background-color: rgba(153, 153, 153, 0.295);
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .slider {
+    height: calc(100vh - 80px);
+
+    .container {
+      height: 100%;
+    }
+
+    .icons {
+      bottom: 100px;
     }
   }
 }

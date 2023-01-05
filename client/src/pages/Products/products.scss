@@ -10,12 +10,13 @@
   max-width: 1200px;
   margin: auto;
   margin-bottom: 200px;
+  margin-top: 35px;
 
   .left {
     flex: 1;
     position: sticky;
     height: 100%;
-    top: 50px;
+    top: 80px;
 
     .filterItem {
       margin-bottom: 60px;

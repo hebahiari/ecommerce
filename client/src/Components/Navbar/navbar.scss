@@ -24,14 +24,16 @@
       font-size: 18px;
     }
 
+    .language {
+      display: none;
+    }
+
     .left {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+      display: none;
     }
 
     .center {
-      font-size: 30px;
+      font-size: 20px;
       letter-spacing: 2px;
       font-family: "Electrolize", sans-serif;
     }
@@ -69,6 +71,26 @@
             justify-content: center;
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .navbar {
+    .wrapper {
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .center {
+        font-size: 30px;
+      }
+
+      .language {
+        display: block;
       }
     }
   }

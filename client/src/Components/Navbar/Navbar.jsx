@@ -64,7 +64,7 @@ export default function Navbar() {
         </div>
         <div className="right">
           <div className="icons">
-            <div className="item">
+            <div className="item language">
               <img src="/img/eng.png" alt="" className="lang" />
               <KeyboardArrowDown />
             </div>
