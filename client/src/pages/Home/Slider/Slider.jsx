@@ -6,24 +6,20 @@ export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const previousSlide = () => {
-    setCurrentSlide(
-      currentSlide === 0 ? 2 : (currentSlide) => currentSlide - 1
+    setCurrentSlide((currentSlide) =>
+      currentSlide === 0 ? 2 : currentSlide - 1
     );
   };
 
   const nextSlide = () => {
-    console.log({ currentSlide });
-    setCurrentSlide(
-      currentSlide === 2 ? 0 : (currentSlide) => currentSlide + 1
+    setCurrentSlide((currentSlide) =>
+      currentSlide === 2 ? 0 : currentSlide + 1
     );
   };
 
-  // window.onload = function () {
-  //   var button = document.getElementById("clickButton");
-  //   setInterval(function () {
-  //     nextSlide();
-  //   }, 3000); // this will make it click again every 1000 miliseconds
-  // };
+  useEffect(() => {
+    setInterval(() => previousSlide(), 4000); // this will make it click again every 1000 miliseconds
+  }, []);
 
   return (
     <div className="slider">
