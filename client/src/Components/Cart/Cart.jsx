@@ -24,11 +24,12 @@ export default function Cart() {
   const handlePayment = async () => {
     try {
       const stripe = await stripePromise;
+      console.log("tried");
       const response = await api.post("/orders", {
         products,
       });
+      console.log("responded");
 
-      console.log({ response });
       await stripe.redirectToCheckout({
         sessionId: response.data.stripeSession.id,
       });
