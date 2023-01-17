@@ -12,8 +12,8 @@
   .wrapper {
     max-width: 1200px;
     width: 100%;
+    padding: 15px 30px 10px 20px;
 
-    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +36,62 @@
       font-size: 20px;
       letter-spacing: 2px;
       font-family: "Electrolize", sans-serif;
+
+      .dropdown {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .arrow {
+          font-size: 30px;
+        }
+      }
+
+      .menu {
+        align-items: center;
+        background-color: #fefdfc;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        left: 0;
+        top: 55px;
+        width: 200px;
+        z-index: 3;
+        padding: 20px;
+
+        hr {
+          border: 0;
+          width: 90%;
+          margin: 10px;
+          height: 1px;
+          background: #333;
+          background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        }
+
+        .item {
+          padding: 10px;
+
+          .menulink {
+            text-decoration: none;
+            color: #555555;
+          }
+        }
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 55px;
+        width: 100vw;
+      }
+
+      .link {
+        display: none;
+      }
     }
 
     .right {
@@ -79,6 +135,7 @@
 @media (min-width: 750px) {
   .navbar {
     .wrapper {
+      padding: 10px 30px;
       .left {
         display: flex;
         align-items: center;
@@ -87,6 +144,14 @@
 
       .center {
         font-size: 30px;
+
+        .link {
+          display: block;
+        }
+
+        .dropdown {
+          display: none;
+        }
       }
 
       .language {

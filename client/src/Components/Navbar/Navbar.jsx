@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import "./navbar.scss";
-import {
-  Search,
-  FavoriteBorderOutlined,
-  PersonOutlineOutlined,
-  KeyboardArrowDown,
-  ShoppingCartOutlined,
-} from "@mui/icons-material";
+import { KeyboardArrowDown, ShoppingCartOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
+  const [menuClicked, setMenuClicked] = useState(false);
   const products = useSelector((state) => state.cart.products);
 
   //change navbar color when scrolled
@@ -22,6 +17,39 @@ export default function Navbar() {
       setColor(true);
     }
   };
+
+  const handleClick = () => {
+    setMenuClicked(!menuClicked);
+  };
+
+  const dropDownMenuItems = (
+    <>
+      <div className="menu">
+        <span className="item" onClick={() => setMenuClicked(false)}>
+          <Link to="/" className="menulink">
+            Home
+          </Link>
+        </span>
+        <hr />
+        <span className="item" onClick={() => setMenuClicked(false)}>
+          <Link className="menulink" to="/products/clothing">
+            Clothing
+          </Link>
+        </span>
+        <span className="item" onClick={() => setMenuClicked(false)}>
+          <Link className="menulink" to="/products/shoes">
+            Shoes
+          </Link>
+        </span>
+        <span className="item" onClick={() => setMenuClicked(false)}>
+          <Link className="menulink" to="/products/accessories">
+            Accessories
+          </Link>
+        </span>
+      </div>
+      <div className="overlay"></div>
+    </>
+  );
 
   window.addEventListener("scroll", changeColor);
 
@@ -39,11 +67,15 @@ export default function Navbar() {
       }}
     >
       <div className="wrapper">
-        {" "}
         <div className="center">
           <Link className="link" to="/">
             TechWearCo
           </Link>
+          <div className="dropdown" onClick={handleClick}>
+            TechWearCo
+            <KeyboardArrowDown className="arrow" />
+          </div>
+          {menuClicked ? dropDownMenuItems : null}
         </div>
         <div className="left">
           <div className="item">
