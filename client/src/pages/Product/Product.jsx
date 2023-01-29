@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AddShoppingCart, FavoriteBorder, Balance } from "@mui/icons-material";
 import "./product.scss";
 import useFetch from "../../utilis/useFetch";
@@ -11,9 +11,16 @@ export default function Product() {
   const id = useParams().id;
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [added, setAdded] = useState(false)
 
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+
+  // display added! message for one second after adding an item to cart
+useEffect(() => {
+  setTimeout(() => setAdded(false), 1000)
+}, [added])
+
 
   return (
     <div className="product">
@@ -49,20 +56,25 @@ export default function Product() {
             <p>{data?.attributes?.desc}</p>
             <div className="quantity">
               <button
-                onClick={() =>
+                onClick={() => {
                   setQuantity((current) => (current === 1 ? 1 : current - 1))
+                  setAdded(false)
+                }
                 }
               >
                 -
               </button>
               <div className="span">{quantity}</div>
-              <button onClick={() => setQuantity((current) => current + 1)}>
+              <button onClick={() => {
+                setQuantity((current) => current + 1)
+                setAdded(false)
+              }}>
                 +
               </button>
             </div>
             <button
               className="add"
-              onClick={() =>
+              onClick={() => {
                 dispatch(
                   addToCart({
                     id: data.id,
@@ -73,10 +85,11 @@ export default function Product() {
                     quantity,
                   })
                 )
+                setAdded(true)
+                }
               }
             >
-              <AddShoppingCart />
-              Add to cart
+              {added? "Added!" : <><AddShoppingCart />Add to cart</>}
             </button>
             <div className="link">
               <div className="item">
