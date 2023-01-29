@@ -3,8 +3,8 @@
   margin: auto;
   overflow: hidden;
   margin-bottom: 50px;
-  padding: 0 40px;
-
+  padding: 0 20px;
+ 
   .top {
     display: flex;
     flex-direction: column;
@@ -39,6 +39,7 @@
       gap: 50px;
       max-width: 1000px;
       transition: all 1s ease;
+      margin-left: calc(100vh - 75px);
     }
 
     .icon {
@@ -52,6 +53,15 @@
       cursor: pointer;
       background-color: #ff0;
       z-index: 1;
+      position: absolute;
+    }
+
+    .left{
+      left: 0;
+    }
+
+    .right{
+      right: 0;
     }
   }
 }
@@ -69,6 +79,15 @@
         display: block;
         flex: 3;
         color: gray;
+      }
+    }
+    .bottom{
+      .content{
+        margin-left: auto;
+      }
+
+      .icon{
+        position: inherit;
       }
     }
   }

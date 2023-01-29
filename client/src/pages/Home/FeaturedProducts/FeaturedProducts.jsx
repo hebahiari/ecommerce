@@ -16,7 +16,7 @@ export default function FeaturedProducts({ type }) {
   const nextSlide = () => {
     console.log(data.length);
     setCurrentSlide(
-      currentSlide <= data.length - 6 ? currentSlide + 1 : currentSlide
+      currentSlide <= data.length - 5 ? currentSlide + 1 : currentSlide
     );
     console.log({ currentSlide });
   };
@@ -34,7 +34,7 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className="bottom">
-        <div className="icon" onClick={previousSlide}>
+        <div className="icon left" onClick={previousSlide}>
           <WestOutlined />
         </div>
         <div
@@ -49,7 +49,7 @@ export default function FeaturedProducts({ type }) {
             data.map((item) => <Card item={item} key={item.id} />)
           )}
         </div>
-        <div className="icon" onClick={nextSlide}>
+        <div className="icon right" onClick={nextSlide}>
           <EastOutlined />
         </div>
       </div>
