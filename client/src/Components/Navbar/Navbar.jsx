@@ -4,19 +4,13 @@ import { KeyboardArrowDown, ShoppingCartOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import 'url-change-event'
 
 export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
   const products = useSelector((state) => state.cart.products);
-
-  //change navbar color when scrolled
-  const [color, setColor] = useState(false);
-  const changeColor = () => {
-    if (window.scrollY >= 50) {
-      setColor(true);
-    }
-  };
 
   const handleClick = () => {
     setMenuClicked(!menuClicked);
@@ -51,7 +45,12 @@ export default function Navbar() {
     </>
   );
 
-  window.addEventListener("scroll", changeColor);
+  // close cart when url changes
+  useEffect(() => {
+  window.addEventListener("urlchangeevent", (e) => {
+    setOpenCart(false)
+  });
+  }, [])
 
   const numberOfItems = products.reduce(
     (currentTotal, currentValue) => currentTotal + currentValue.quantity,
@@ -62,8 +61,7 @@ export default function Navbar() {
     <div
       className="navbar"
       style={{
-        backgroundColor: `${color ? "white" : "transparent"}`,
-        color: `${color ? "black" : "white"}`,
+        backgroundColor:"white"
       }}
     >
       <div className="wrapper">

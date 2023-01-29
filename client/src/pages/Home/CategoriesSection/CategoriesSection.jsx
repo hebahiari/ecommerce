@@ -8,7 +8,7 @@ export default function Categories() {
         <div className="row">
           <img src="/img/home-tops.jpg" alt="" />
           <button>
-            <Link to="./products/1" className="link">
+            <Link to="./products/clothing?subcategory=4" className="link">
               Tops
             </Link>
           </button>
@@ -26,7 +26,7 @@ export default function Categories() {
         <div className="row">
           <img src="/img/home-outerwear.jpg" alt="" />
           <button>
-            <Link to="./products/clothing?subcategory=11" className="link">
+            <Link to="./products/clothing?subcategory=5" className="link">
               Outerwear
             </Link>
           </button>
@@ -38,7 +38,7 @@ export default function Categories() {
             <div className="row">
               <img src="/img/home-pants.jpg" alt="" />
               <button>
-                <Link to="./products/clothing?subcategory=10" className="link">
+                <Link to="./products/clothing?subcategory=6" className="link">
                   Pants
                 </Link>
               </button>
@@ -58,7 +58,7 @@ export default function Categories() {
         <div className="row">
           <img src="/img/home-sets.jpg" alt="" />
           <button>
-            <Link to="./products/clothing?subcategory=12" className="link">
+            <Link to="./products/clothing?subcategory=11" className="link">
               Sets
             </Link>
           </button>

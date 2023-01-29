@@ -35,11 +35,12 @@ padding: 0 40px 0 ;    }
     gap: 30px;
 
     .gradient {
-      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 21%, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 100%);
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 13%, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 100%);
       position: absolute;
       width: 100%;
       height: 100%;
       z-index: 2;
+      pointer-events: none; 
     }
 
     .content {
