@@ -5,12 +5,12 @@
   z-index: 5;
   background-color: white;
   padding: 20px;
-  width: 400px;
   min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+  max-width: 400px;
 
   .empty {
     align-self: center;
