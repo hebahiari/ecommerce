@@ -3,7 +3,8 @@
   margin: auto;
   overflow: hidden;
   margin-bottom: 50px;
-  padding: 0 20px;
+
+
  
   .top {
     display: flex;
@@ -21,8 +22,8 @@
     }
 
     p {
-      display: none;
-    }
+text-align: center;
+padding: 0 40px 0 ;    }
   }
 
   .bottom {
@@ -33,13 +34,22 @@
     transition: all 1s ease;
     gap: 30px;
 
+    .gradient {
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 21%, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
     .content {
-      display: flex;
+margin-top: 2px;      display: flex;
       justify-content: flex-start;
       gap: 50px;
       max-width: 1000px;
       transition: all 1s ease;
       margin-left: calc(100vh - 75px);
+        padding: 0 20px;
     }
 
     .icon {
@@ -52,16 +62,16 @@
       justify-content: center;
       cursor: pointer;
       background-color: #ff0;
-      z-index: 1;
+      z-index: 3;
       position: absolute;
     }
 
     .left{
-      left: 0;
+      left: 20px;
     }
 
     .right{
-      right: 0;
+      right: 20px;
     }
   }
 }

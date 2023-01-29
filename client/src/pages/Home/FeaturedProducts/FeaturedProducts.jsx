@@ -34,6 +34,7 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className="bottom">
+        <div className="gradient"></div>
         <div className="icon left" onClick={previousSlide}>
           <WestOutlined />
         </div>
