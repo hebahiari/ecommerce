@@ -16,14 +16,21 @@
     flex: 1;
     position: sticky;
     height: 100%;
-    top: 80px;
+    top: 80px;      
+    display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
     .filterItem {
-      margin-bottom: 60px;
+      margin-bottom: 20px;
+
 
       h2 {
         font-weight: bold;
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
       }
 
       .inputItem {
@@ -37,7 +44,7 @@
   }
 
   .right {
-    flex: 3;
+    flex: 4;
     display: flex;
   }
 }
@@ -48,6 +55,10 @@
     flex-direction: row;
     padding: 30px 50px;
     margin-bottom: 200px;
+
+    .left{
+flex-direction: column;
+    }
   }
 
   .categoriesImage {
