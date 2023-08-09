@@ -7,29 +7,26 @@ export default function Categories() {
       <div className="col">
         <div className="row">
           <img src="/img/home-tops.jpg" alt="" />
-          <button>
-            <Link to="./products/clothing?subcategory=4" className="link">
-              Tops
-            </Link>
-          </button>
+
+          <Link to="./products/clothing?subcategory=4" className="link">
+            <button>Tops </button>
+          </Link>
         </div>
         <div className="row">
           <img src="/img/home-shoes.jpg" alt="" />
-          <button>
-            <Link to="./products/shoes" className="link">
-              Shoes
-            </Link>
-          </button>
+
+          <Link to="./products/shoes" className="link">
+            <button>Shoes</button>
+          </Link>
         </div>
       </div>
       <div className="col">
         <div className="row">
           <img src="/img/home-outerwear.jpg" alt="" />
-          <button>
-            <Link to="./products/clothing?subcategory=5" className="link">
-              Outerwear
-            </Link>
-          </button>
+
+          <Link to="./products/clothing?subcategory=5" className="link">
+            <button>Outerwear</button>
+          </Link>
         </div>
       </div>
       <div className="col col-l">
@@ -37,31 +34,27 @@ export default function Categories() {
           <div className="col">
             <div className="row">
               <img src="/img/home-pants.jpg" alt="" />
-              <button>
-                <Link to="./products/clothing?subcategory=6" className="link">
-                  Pants
-                </Link>
-              </button>
+
+              <Link to="./products/clothing?subcategory=6" className="link">
+                <button>Pants</button>
+              </Link>
             </div>
           </div>
           <div className="col">
             <div className="row">
               <img src="/img/home-accessories.jpg" alt="" />
-              <button>
-                <Link to="./products/accessories" className="link">
-                  Accessories
-                </Link>
-              </button>
+
+              <Link to="./products/accessories" className="link">
+                <button>Accessories</button>
+              </Link>
             </div>
           </div>
         </div>
         <div className="row">
           <img src="/img/home-sets.jpg" alt="" />
-          <button>
-            <Link to="./products/clothing?subcategory=11" className="link">
-              Sets
-            </Link>
-          </button>
+          <Link to="./products/clothing?subcategory=11" className="link">
+            <button>Sets</button>
+          </Link>
         </div>
       </div>
     </div>
