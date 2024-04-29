@@ -17,10 +17,11 @@ export default function Product() {
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
   // display added! message for one second after adding an item to cart
-useEffect(() => {
-  setTimeout(() => setAdded(false), 1000)
-}, [added])
+  useEffect(() => {
+    setTimeout(() => setAdded(false), 1000)
+  }, [added])
 
+  console.log(data.attributes)
 
   return (
     <div className="product">
@@ -86,10 +87,10 @@ useEffect(() => {
                   })
                 )
                 setAdded(true)
-                }
+              }
               }
             >
-              {added? "Added!" : <><AddShoppingCart />Add to cart</>}
+              {added ? "Added!" : <><AddShoppingCart />Add to cart</>}
             </button>
             <div className="link">
               <div className="item">
@@ -101,8 +102,6 @@ useEffect(() => {
             </div>
             <div className="info">
               <span>Vendor: Zara</span>
-              <span>Product type: Dress</span>
-              <span>Tags: dress, women</span>
             </div>
             <hr />
           </div>
