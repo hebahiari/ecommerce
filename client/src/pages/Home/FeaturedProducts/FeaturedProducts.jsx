@@ -25,7 +25,7 @@ export default function FeaturedProducts({ type }) {
         <h1>{type} products</h1>
         <p>
           Explore our handpicked selection of top trends and timeless classics in our Featured Items section. From stylish tops to chic accessories, find everything you need to elevate your wardrobe effortlessly.
-        </p>old
+        </p>
       </div>
       <div className="bottom">
         <div className="gradient"></div>
@@ -41,7 +41,7 @@ export default function FeaturedProducts({ type }) {
           ) : loading ? (
             <Loading />
           ) : (
-            data.map((item) => <Card item={item} key={item.id} />)
+            data.filter((item) => item.attributes.isNew == true).map((item) => <Card item={item} key={item.id} />)
           )}
         </div>
         <div className="icon right" onClick={nextSlide}>
