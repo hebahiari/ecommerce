@@ -24,12 +24,8 @@ export default function FeaturedProducts({ type }) {
       <div className="top">
         <h1>{type} products</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-          tempus, turpis et dictum bibendum, magna magna accumsan eros,
-          hendrerit auctor lectus lectus id nulla. Fusce vitae nisi mi.
-          Vestibulum et consequat sem. Nullam varius tempor sapien vel
-          vestibulum.
-        </p>
+          Explore our handpicked selection of top trends and timeless classics in our Featured Items section. From stylish tops to chic accessories, find everything you need to elevate your wardrobe effortlessly.
+        </p>old
       </div>
       <div className="bottom">
         <div className="gradient"></div>

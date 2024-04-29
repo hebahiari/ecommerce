@@ -22,21 +22,13 @@ export default function Footer() {
         <div className="item">
           <h1>About</h1>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            tempus, turpis et dictum bibendum, magna magna accumsan eros,
-            hendrerit auctor lectus lectus id nulla. Fusce vitae nisi mi.
-            Vestibulum et consequat sem. Nullam varius tempor sapien vel
-            vestibulum.
+            Discover urban style redefined at TechWearCo. Explore our techwear collection, blending fashion and function seamlessly. Elevate your wardrobe with sleek, innovative pieces designed to conquer the city in style.
           </span>
         </div>
         <div className="item">
           <h1>Contact</h1>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            tempus, turpis et dictum bibendum, magna magna accumsan eros,
-            hendrerit auctor lectus lectus id nulla. Fusce vitae nisi mi.
-            Vestibulum et consequat sem. Nullam varius tempor sapien vel
-            vestibulum.
+            Got questions or feedback? Reach out to us at contact@techwearco.com. Our friendly team is here to assist you with anything you need. Connect with us today and let's make your shopping experience exceptional.
           </span>
         </div>
       </div>
