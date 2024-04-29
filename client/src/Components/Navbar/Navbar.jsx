@@ -47,9 +47,9 @@ export default function Navbar() {
 
   // close cart when url changes
   useEffect(() => {
-  window.addEventListener("urlchangeevent", (e) => {
-    setOpenCart(false)
-  });
+    window.addEventListener("urlchangeevent", (e) => {
+      setOpenCart(false)
+    });
   }, [])
 
   const numberOfItems = products.reduce(
@@ -61,7 +61,7 @@ export default function Navbar() {
     <div
       className="navbar"
       style={{
-        backgroundColor:"white"
+        backgroundColor: "white"
       }}
     >
       <div className="wrapper">
@@ -94,10 +94,6 @@ export default function Navbar() {
         </div>
         <div className="right">
           <div className="icons">
-            <div className="item language">
-              <img src="/img/eng.png" alt="" className="lang" />
-              <KeyboardArrowDown />
-            </div>
             <div
               className="cartIcon"
               onClick={() => setOpenCart((current) => !current)}
