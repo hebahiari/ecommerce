@@ -6,9 +6,8 @@ import "./list.scss";
 export default function List({ category, maxPrice, sort, selectedCategories }) {
   const { data, loading, error } = useFetch(
     `/products?populate=*&[filters][categories][title]=${category}${selectedCategories
-      .map((id) => `&[filters][subcategories][id]=${id}`)
-      .join("")}&[filters][price][$lte]=${maxPrice}${
-      sort ? `&sort=price:${sort}` : ""
+      .map((title) => `&[filters][subcategories][title]=${title}`)
+      .join("")}&[filters][price][$lte]=${maxPrice}${sort ? `&sort=price:${sort}` : ""
     }`
   );
 

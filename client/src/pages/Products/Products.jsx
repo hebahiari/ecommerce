@@ -33,11 +33,7 @@ export default function Products() {
         ? [...selectedCategories, value]
         : selectedCategories.filter((item) => item !== value)
     );
-  };
-
-  const catergoriesMenu = ""
-  const priceMenu = ""
-  const sortMeny = ""
+  }
 
   return (
     <>
@@ -46,23 +42,24 @@ export default function Products() {
       <div className="products">
         <div className="left">
           <div className="filterItem">
-            <h2>Categories {openCategoriesMenu?<KeyboardArrowUp onClick={()=> setOpenCategoriesMenu(false)}/> : <KeyboardArrowDown onClick={()=> setOpenCategoriesMenu(true)}/>}</h2>
-            {openCategoriesMenu? data?.map((item) => (
+            <h2>Categories {openCategoriesMenu ? <KeyboardArrowUp onClick={() => setOpenCategoriesMenu(false)} /> : <KeyboardArrowDown onClick={() => setOpenCategoriesMenu(true)} />}</h2>
+            {openCategoriesMenu ? data?.map((item) => (
               <div className="inputItem" key={item.id}>
                 <input
                   type="checkbox"
                   className=""
-                  id={item.id}
-                  value={item.id}
+                  id={item.attributes.title}
+                  value={item.attributes.title}
                   onChange={handleChange}
+                  checked={selectedCategories.find((value) => value == item.attributes.title)}
                 />
-                <label htmlFor={item.id}>{item.attributes.title}</label>
+                <label htmlFor={item.attributes.title}>{item.attributes.title}</label>
               </div>
             )) : null}
           </div>
           <div className="filterItem">
-            <h2>Filter By Price {openPriceMenu?<KeyboardArrowUp onClick={()=> setopenPriceMenu(false)}/> : <KeyboardArrowDown onClick={()=> setopenPriceMenu(true)}/>}</h2>
-           {openPriceMenu? <div className="inputIte">
+            <h2>Filter By Price {openPriceMenu ? <KeyboardArrowUp onClick={() => setopenPriceMenu(false)} /> : <KeyboardArrowDown onClick={() => setopenPriceMenu(true)} />}</h2>
+            {openPriceMenu ? <div className="inputIte">
               <span>0</span>
               <input
                 type="range"
@@ -73,11 +70,11 @@ export default function Products() {
                 }}
               />
               <span>{maxPrice}</span>
-            </div>: null}
+            </div> : null}
           </div>
           <div className="filterItem">
-            <h2>Sort By {openSortMenu?<KeyboardArrowUp onClick={()=> setOpenSortMenu(false)}/> : <KeyboardArrowDown onClick={()=> setOpenSortMenu(true)}/>}</h2>
-        { openSortMenu?   <><div className="inputItem">
+            <h2>Sort By {openSortMenu ? <KeyboardArrowUp onClick={() => setOpenSortMenu(false)} /> : <KeyboardArrowDown onClick={() => setOpenSortMenu(true)} />}</h2>
+            {openSortMenu ? <><div className="inputItem">
               <input
                 type="radio"
                 id="asc"
@@ -89,16 +86,16 @@ export default function Products() {
               />
               <label htmlFor="asc">Price (Lowest first) </label>
             </div>
-            <div className="inputItem">
-              <input
-                type="radio"
-                id="desc"
-                value="desc"
-                name="price"
-                onChange={() => setSort("desc")}
-              />
-              <label htmlFor="desc">Price (Highest first)</label>
-            </div></> : null}
+              <div className="inputItem">
+                <input
+                  type="radio"
+                  id="desc"
+                  value="desc"
+                  name="price"
+                  onChange={() => setSort("desc")}
+                />
+                <label htmlFor="desc">Price (Highest first)</label>
+              </div></> : null}
           </div>
         </div>
         <div className="right">
