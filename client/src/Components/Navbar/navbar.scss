@@ -41,6 +41,7 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+
         .arrow {
           font-size: 30px;
         }
@@ -109,9 +110,11 @@
         gap: 15px;
         color: grey;
         cursor: pointer;
+        padding-left: 80px;
 
         .cartIcon {
           position: relative;
+
           span {
             font-size: 12px;
             border-radius: 50%;
@@ -136,6 +139,7 @@
   .navbar {
     .wrapper {
       padding: 10px 30px;
+
       .left {
         display: flex;
         align-items: center;

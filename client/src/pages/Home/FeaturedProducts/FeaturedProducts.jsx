@@ -14,8 +14,9 @@ export default function FeaturedProducts({ type }) {
   };
 
   const nextSlide = () => {
+    console.log(data.length)
     setCurrentSlide(
-      currentSlide <= data.length - 5 ? currentSlide + 1 : currentSlide
+      currentSlide <= data.length - 10 ? currentSlide + 1 : currentSlide
     );
   };
 
